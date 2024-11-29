@@ -142,8 +142,8 @@ if name:
             missing_data.append("Vấn đề tim trước đây")
         if medication == "":
             missing_data.append("Sử dụng thuốc")
-        if systolic_bp < diastolic_bp:
-            st.missing_data.append("Nhập systolic_bp và diastolic_bp không hợp lệ vìsystolic_bp > diastolic_bp")
+        if float(systolic_bp) < float(diastolic_bp):
+            st.missing_data.append("loi systolic < diastolic")
         # Xử lý kết quả
         if missing_data:
             st.error(f"Bạn cần nhập đầy đủ thông tin cho các trường sau: {', '.join(missing_data)}")
