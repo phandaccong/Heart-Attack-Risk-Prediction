@@ -207,7 +207,7 @@ if name:
        'Physical Activity Days Per Week', 'Sleep Hours Per Day', 'Systolic_BP',
        'Diastolic_BP', 'Active Hours Day']
 
-            df.to_csv('Data_new.csv' , mode = 'a' , header=False, index=FalseFalse)
+            df.to_csv('Data_new.csv' , mode = 'a' , header=False, index= False)
             df = df.drop('name' , axis =1 )
             col_scaler = df.loc[: , col_nunique ].columns
             
