@@ -75,7 +75,7 @@ if name:
     diabetes = st.selectbox("Bạn có bị tiểu đường không(0 : không , 1: có) ? ", ["0", "1"])
     family = st.selectbox("Người nhà bạn có mắc bệnh tim không (0 : không , 1: có) ?", ["0", "1"])
     smoking = st.selectbox("Bạn có hút thuốc không (0 : không , 1: có) ?", ["0", "1"])
-    obesity = st.number_input("Chỉ số béo phì (BMI):", min_value=0.0)
+    obesity = st.number_input("Nhập vào obesity: ", min_value=0.0)
     alcohol = st.number_input("Mức tiêu thụ rượu bia (ly/ngày):", min_value=0)
     exercise = st.number_input("Số giờ tập thể dục mỗi tuần:", min_value=0)
     diet = st.selectbox("Chế độ ăn uống của bạn:", ["Healthy","Average","Unhealthy"])
@@ -142,9 +142,12 @@ if name:
             missing_data.append("Vấn đề tim trước đây")
         if medication == "":
             missing_data.append("Sử dụng thuốc")
+        if systolic_bp < diastolic_bp:
+            st.missing_data.append("Nhập systolic_bp và diastolic_bp không hợp lệ vìsystolic_bp > diastolic_bp")
         # Xử lý kết quả
         if missing_data:
             st.error(f"Bạn cần nhập đầy đủ thông tin cho các trường sau: {', '.join(missing_data)}")
+        
         else:
             st.success("Thông tin của bạn đã được ghi nhận! Sẵn sàng dự đoán.")
             st.write(f"Thông tin của {name} đã được ghi nhận:")
@@ -152,7 +155,8 @@ if name:
             keywords = {'Average':0, 'Unhealthy':1, 'Healthy':2}
             diet_again = keywords[diet]
             a = {
-                'Age': age,
+                'name' : str(name),
+                'Age': int(age),
                 'Cholesterol' : float(chol),
                 'Heart Rate' : int(heart),
                 'Diabetes' : int(diabetes),
@@ -202,6 +206,9 @@ if name:
        'Stress Level', 'Income', 'BMI', 'Triglycerides',
        'Physical Activity Days Per Week', 'Sleep Hours Per Day', 'Systolic_BP',
        'Diastolic_BP', 'Active Hours Day']
+
+            df.to_csv('Data_new.csv' , mode = 'a' , header=False, index=FalseFalse)
+            df = df.drop('name' , axis =1 )
             col_scaler = df.loc[: , col_nunique ].columns
             
             scaler = jb.load("scaler_lgb.pkl")
