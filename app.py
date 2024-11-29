@@ -68,29 +68,29 @@ if name:
     st.write(f'Xin chào {name}, mời bạn nhập vào các trường sau:')
 
     # Các trường nhập dữ liệu
-    age = st.number_input("Nhập vào tuổi của bạn:", min_value=18, max_value=90)
-    sex = st.selectbox("Giới tính của bạn:", ["Male", "Female"])
-    chol = st.number_input("Nhập vào mức cholesterol của bạn (mg/dL):", min_value=0.0)
-    heart = st.number_input("Nhập vào nhịp tim (bpm):", min_value=0, max_value=500)
+    age = st.number_input("Nhập vào tuổi của bạn (age) :", min_value=18, max_value=90)
+    sex = st.selectbox("Giới tính của bạn (sex) :", ["Male", "Female"])
+    chol = st.number_input("Nhập vào mức cholesterol của bạn (mg/dL):", min_value=0.0, max_value = 900 , value = 300)
+    heart = st.number_input("Nhập vào nhịp tim (bpm):", min_value=10, max_value=500 , value = 10)
     diabetes = st.selectbox("Bạn có bị tiểu đường không(0 : không , 1: có) ? ", ["0", "1"])
     family = st.selectbox("Người nhà bạn có mắc bệnh tim không (0 : không , 1: có) ?", ["0", "1"])
     smoking = st.selectbox("Bạn có hút thuốc không (0 : không , 1: có) ?", ["0", "1"])
-    obesity = st.number_input("Nhập vào obesity: ", min_value=0.0)
-    alcohol = st.number_input("Mức tiêu thụ rượu bia (ly/ngày):", min_value=0)
-    exercise = st.number_input("Số giờ tập thể dục mỗi tuần:", min_value=0)
+    obesity = st.selectbox("Nhập vào obesity: ", ['0' , '1'])
+    alcohol = st.number_input("Mức tiêu thụ rượu bia (ly/ngày):", min_value=0 , value = 0)
+    exercise = st.number_input("Số giờ tập thể dục mỗi tuần:", min_value=0 , value = 0)
     diet = st.selectbox("Chế độ ăn uống của bạn:", ["Healthy","Average","Unhealthy"])
     previous_problems = st.selectbox("Bạn từng có vấn đề tim mạch trước đây không (0 : không , 1: có) ?", ["0", "1"])
     medication = st.selectbox("Bạn có sử dụng thuốc điều trị không (0 : không , 1: có) ?", ["0", "1"])
-    stress = st.number_input("Mức độ căng thẳng (1-10):", min_value=1, max_value=10)
-    income = st.number_input("Thu nhập trung bình hàng tháng (USD):", min_value=100 )
-    bmi = st.number_input("Nhap vao chỉ số BMI" , min_value= 10 , max_value=999)
-    triglycerides = st.number_input("Triglycerides (mg/dL):", min_value=0)
-    physical_activity = st.number_input("Số ngày hoạt động thể chất mỗi tuần:", min_value=0, max_value=7)
-    sleep_hours = st.number_input("Số giờ ngủ mỗi ngày:", min_value=0, max_value=24)
+    stress = st.number_input("Mức độ căng thẳng (1-10):", min_value=1, max_value=10 , value = 1)
+    income = st.number_input("Thu nhập trung bình hàng tháng (USD):", min_value=1000 , value = 1000)
+    bmi = st.number_input("Nhap vao chỉ số BMI" , min_value= 10 , max_value=999 , value = 50)
+    triglycerides = st.number_input("Triglycerides (mg/dL):", min_value= 0.0 , max_value = 1000 , value = 500)
+    physical_activity = st.number_input("Số ngày hoạt động thể chất mỗi tuần:", min_value=0, max_value=7 , value = 0)
+    sleep_hours = st.number_input("Số giờ ngủ mỗi ngày:", min_value=0, max_value=24 , value = 24)
     country = st.selectbox("Chọn quốc gia của bạn", countries)
-    systolic_bp = st.number_input("Huyết áp tâm thu (mmHg):", min_value=100)
-    diastolic_bp = st.number_input("Huyết áp tâm trương (mmHg):", min_value=0, value=80)
-    active_hours = st.number_input("Số giờ hoạt động mỗi ngày:", min_value=0, max_value=24)
+    systolic_bp = st.number_input("Huyết áp tâm thu (mmHg):", min_value=100 , max_value = 900 , value = 200)
+    diastolic_bp = st.number_input("Huyết áp tâm trương (mmHg):", min_value=0, max_value=900 , value = 100 )
+    active_hours = st.number_input("Số giờ hoạt động mỗi ngày:", min_value=0, max_value=24 , value = 200)
 
     # Kiểm tra dữ liệu đã nhập
     if st.button("Dự đoán nguy cơ"):
@@ -200,7 +200,7 @@ if name:
                 'Country_United States' : 1 if country == "United States" else 0,
                 'Country_Vietnam' : 1 if country == "Vietnam" else 0
 }           
-
+            st.write(a)
             df = pd.DataFrame(a , index = [0])
             col_nunique = ['Age', 'Cholesterol', 'Heart Rate', 'Exercise Hours Per Week',
        'Stress Level', 'Income', 'BMI', 'Triglycerides',
