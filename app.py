@@ -222,8 +222,8 @@ if name:
             y_predict = int(model.predict(df_input))
             
             if y_predict == 0:
-                st.write("chúc mừng Bạn không bị mắc bệnh tim")
+                st.tile("chúc mừng Bạn không bị mắc bệnh tim")
             else :
-                st.write("Bạn nên cẩn thận hơn vì bạn có nguy cơ mắc bệnh tim")
+                st.title("Bạn nên cẩn thận hơn vì bạn có nguy cơ mắc bệnh tim")
 
             st.write(a)
