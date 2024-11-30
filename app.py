@@ -83,7 +83,7 @@ if name:
     family = st.selectbox("Người nhà bạn có mắc bệnh tim không (0 : không , 1: có) ?", ["0", "1"])
     smoking = st.selectbox("Bạn có hút thuốc không (0 : không , 1: có) ?", ["0", "1"])
     obesity = st.selectbox("Nhập vào obesity: ", ['0' , '1'])
-    alcohol = st.selectkhông: (0 : không , 1: có)", ['0' , '1'])
+    alcohol = st.selectbox("Bạn có uống rượu bia không (0: không, 1: có): ", ['0' , '1'])
     exercise = st.number_input("Số giờ tập thể dục mỗi tuần:", min_value=0.0 , value = 0.0)
     diet = st.selectbox("Chế độ ăn uống của bạn:", ["Healthy","Average","Unhealthy"])
     previous_problems = st.selectbox("Bạn từng có vấn đề tim mạch trước đây không (0 : không , 1: có) ?", ["0", "1"])
