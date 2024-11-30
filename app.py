@@ -64,7 +64,7 @@ def save_data_mongodb(df):
 
 # Tiêu đề ứng dụng
 st.title('Heart Attack Risk Predict')
-st.write('Chào bạn đến với nhóm DP-03!')
+st.write('Chào bạn đến với nhóm DP-03! 🌲')
 
 # Nhập tên
 name = st.text_input("Nhập vào tên của bạn:")
@@ -76,14 +76,14 @@ if name:
     st.title(f'Xin chào {name}, mời bạn nhập vào các trường sau:')
     # Các trường nhập dữ liệu
     age = st.number_input("Nhập vào tuổi của bạn (age) :", min_value=18, max_value=90)
-    sex = st.selectbox("Giới tính của bạn (sex) :", ["Male", "Female"])
+    sex = st.selectbox("Giới tính của bạn :", ["Male", "Female"])
     chol = st.number_input("Nhập vào mức cholesterol của bạn (mg/dL):", min_value=0, max_value = 900 , value = 300)
     heart = st.number_input("Nhập vào nhịp tim (bpm):", min_value=10, max_value=500 , value = 80)
     diabetes = st.selectbox("Bạn có bị tiểu đường không(0 : không , 1: có) ? ", ["0", "1"])
     family = st.selectbox("Người nhà bạn có mắc bệnh tim không (0 : không , 1: có) ?", ["0", "1"])
     smoking = st.selectbox("Bạn có hút thuốc không (0 : không , 1: có) ?", ["0", "1"])
     obesity = st.selectbox("Nhập vào obesity: ", ['0' , '1'])
-    alcohol = st.selectbox("Co uong ruou bia khong: (0 : không , 1: có)", ['0' , '1'])
+    alcohol = st.selectkhông: (0 : không , 1: có)", ['0' , '1'])
     exercise = st.number_input("Số giờ tập thể dục mỗi tuần:", min_value=0.0 , value = 0.0)
     diet = st.selectbox("Chế độ ăn uống của bạn:", ["Healthy","Average","Unhealthy"])
     previous_problems = st.selectbox("Bạn từng có vấn đề tim mạch trước đây không (0 : không , 1: có) ?", ["0", "1"])
