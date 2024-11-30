@@ -5,7 +5,7 @@ import numpy as np
 from lightgbm import LGBMClassifier
 from sklearn.preprocessing import RobustScaler
 from sklearn.utils import check_X_y
-
+from pymongo.mongo_client import MongoClient
 
 # model 
 column = ['Age',
@@ -52,6 +52,14 @@ column = ['Age',
  'Country_United States',
  'Country_Vietnam']
 
+
+def save_data_mongodb(df):
+    uri = "mongodb+srv://phandaccong:3103@tiktokcommnet.6ep1ywo.mongodb.net/?retryWrites=true&w=majority&tlsAllowInvalidCertificates=true&appName=tiktokcomment"
+    client = MongoClient(uri)
+    db = client['DataHeart_DB']
+    data = db['DataHeart_new']
+    data.insert_one(df)
+    print('Đã lưu dữ liệu ')
 
 
 # Tiêu đề ứng dụng
@@ -199,14 +207,14 @@ if name:
                 'Country_United States' : 1 if country == "United States" else 0,
                 'Country_Vietnam' : 1 if country == "Vietnam" else 0
 }           
-            
+            save_data_mongodb(a)
             df = pd.DataFrame(a , index = [0])
             col_nunique = ['Age', 'Cholesterol', 'Heart Rate', 'Exercise Hours Per Week',
        'Stress Level', 'Income', 'BMI', 'Triglycerides',
        'Physical Activity Days Per Week', 'Sleep Hours Per Day', 'Systolic_BP',
        'Diastolic_BP', 'Active Hours Day']
 
-            df.to_csv('Data_new.csv' , mode = 'a' , header=False, index= False)
+            
             df = df.drop('name' , axis =1 )
             col_scaler = df.loc[: , col_nunique ].columns
             
