@@ -230,8 +230,8 @@ if name:
             y_predict = int(model.predict(df_input))
             
             if y_predict == 0:
-                st.title("chúc mừng Bạn không bị mắc bệnh tim 😁😁🌲")
+                st.title("chúc mừng Bạn không bị mắc bệnh tim 🩺")
             else :
-                st.title("Bạn nên cẩn thận hơn vì bạn có nguy cơ mắc bệnh tim 🤷‍♀️🤷‍♀️🤦‍♂️🌲")
+                st.title("Bạn nên cẩn thận hơn vì bạn có nguy cơ mắc bệnh tim 🩺")
             st.write("⚠️⚠️Cảnh báo model chỉ dự đoán được chính xác 72% thôi chúng ta nên phòng tránh và chú ý tới sức khỏe hơn 💕💕💕❤️")
             st.write(a)
