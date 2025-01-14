@@ -1,7 +1,0 @@
-streamlit
-pandas
-joblib
-numpy
-lightgbm
-scikit-learn
-pymongo
