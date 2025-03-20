@@ -30,5 +30,17 @@ Dự án phân tích dữ liệu y tế để nhận diện các yếu tố ản
 - Lựa chọn LightGBM + GridSearch để tìm các siêu tham số cùng hiệu suất và độ chính xác cao  
 - Đánh giá mô hình: F1-score đạt **71%**
 ## Dashboard trực quan
-![image]
+[Reports](images/DAT111_DP03_FINAL.pdf)
+
+<a href="images/DAT111_DP03_FINAL.pdf">
+  <img src="images/pdf-preview.png" width="200" />
+</a>
+
+## Khuyến nghị
+- Thực hiện kiểm tra sức khỏe định kỳ cho nhóm tuổi nguy cơ cao  
+- Theo dõi kỹ chỉ số cholesterol và thalassemia  
+- Mở rộng thu thập dữ liệu từ nhiều bệnh viện để tăng độ chính xác và phổ quát của mô hình  
+
+
+
   
