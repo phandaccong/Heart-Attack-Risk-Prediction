@@ -32,8 +32,8 @@ Dự án phân tích dữ liệu y tế để nhận diện các yếu tố ản
 ## Dashboard trực quan
 [Reports](images/DAT111_DP03_FINAL.pdf)
 
-<a href="images/DAT111_DP03_FINAL.pdf">
-  <img src="images/pdf-preview.png" width="200" />
+<a href="images/dashboads.png">
+  <img src="images/dashboads.png" width="400" />
 </a>
 
 ## Khuyến nghị
